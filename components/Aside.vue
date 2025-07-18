@@ -1,9 +1,21 @@
 <template>
     <div class="aside">
-        <div class="check">
+        <div class="check" @click="showTip=!showTip">
         <a class="el-icon">
             <ChatLineSquare />
         </a>
+        <div class="tip" v-if="showTip">
+            <div class="el-icon">
+                <Close />
+            </div>
+            
+            <div class="feedback">NPS调研，您可以直接反馈产品使用体验及品牌推荐意愿</div>
+
+            <div>
+                <el-button type="warning">点击参与</el-button>
+            </div>
+            
+        </div>
     </div>
     <div class="top" :class="{ 'top-scrolled': isScrolled }">
         <a href="#top" class="el-icon">
@@ -15,10 +27,12 @@
 </template>
 
 <script setup>
-import { ArrowUp, ChatLineSquare } from "@element-plus/icons-vue";
+import { ArrowUp, ChatLineSquare, Close } from "@element-plus/icons-vue";
+import { ElButton } from "element-plus";
 import { ref, onMounted } from "vue";
 
 const isScrolled = ref(false);
+const showTip=ref(false);
 
 onMounted(() => {
   const handleScroll = () => {
@@ -72,5 +86,31 @@ onMounted(() => {
 }
 .top-scrolled {
     display: none;
+}
+
+.tip {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: -6%;
+    right: 180%;
+    width: 300px;
+    height: auto;
+    color: rgb(0, 0, 0);
+    background-color: rgb(247, 245, 245);
+    padding: 15px; 
+    border-radius: 12px; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+}
+
+.tip .el-icon {
+    left: 240px;
+    color: #666; 
+    cursor: pointer; 
+}
+
+.feedback {
+    font-weight: bold;
+    padding-bottom: 15px;
 }
 </style>
