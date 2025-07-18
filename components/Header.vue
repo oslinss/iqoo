@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div id="navbar" class="nav">
+  <div class="header">
+    <div id="navbar" class="nav" :class="{ 'nav-scrolled': isScrolled }">
       <a class="nav-logo" href="https://www.iqoo.com/cn">IQOO</a>
       <div class="nav-link">
         <NuxtLink to="/">首页</NuxtLink>
@@ -8,7 +8,6 @@
         <a href="https://shop.vivo.com.cn/product/list-527">商城</a>
         <a href="https://www.vivo.com.cn/originos">OriginOS</a>
         <a href="https://www.vivo.com.cn/service.html">服务</a>
-        <el-icon><CirclePlus /></el-icon>
       </div>
     </div>
   </div>
@@ -17,62 +16,66 @@
 <script setup>
 import { onMounted } from "vue";
 
-onMounted(() => {
-  const navbar = document.getElementById("navbar");
+const isScrolled = ref(false);
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      // 白色背景 + 黑色文字
-      navbar.style.backgroundColor = "white";
-      navbar.style.color = "#000000"; // 主要文字颜色
-      const links = navbar.querySelectorAll("a");
-      links.forEach((link) => {
-        link.style.color = "#000000"; // 链接文字也改为黑色
-      });
-    } else {
-      // 恢复初始样式
-      navbar.style.backgroundColor = "#061b41";
-      navbar.style.color = "white";
-      const links = navbar.querySelectorAll("a");
-      links.forEach((link) => {
-        link.style.color = "white"; // 链接文字恢复白色
-      });
-    }
-  });
+onMounted(() => {
+  const handleScroll = () => {
+    isScrolled.value = window.scrollY > 50;
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  
+  // 组件卸载时移除事件监听
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
 });
+
 </script>
 
 <style scoped>
+.header {
+  width: 100%;
+}
+
 .nav {
   display: flex;
+  align-content: center;
+  justify-content: center;
   position: fixed;
-  width: 93%;
-  flex-direction: row;
-  color: white;
-  background-color: #061b41;
-  text-decoration: none;
+  width: 100%;
   top: 0;
-  line-height: 70px;
-  padding-left: 91px;
-  z-index: 1;
-  white-space: nowrap;
-}
-.nav-logo {
+  line-height: 80px;
+  align-items: center;
+  justify-content: center;
   color: white;
+  background: #061b41;
+  z-index: 100;
+}
+
+.nav-scrolled {
+  color: #000;
+  background: rgba(254, 254, 255);
+}
+
+.nav-logo {
+  position: absolute;
+  left: 8rem;
+  color: inherit;
   font-size: 25px;
   font-weight: bold;
-  margin-right: 400px;
   text-decoration: none;
   font-family: "languageFont","AvenirNext","Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu,sans-serif,"WebRupee";
 }
+
 .nav-link {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 30%;
+  gap: 2rem;
+  justify-content: center;
+  width: auto;
 }
 .nav-link a {
-  color: white;
+  color: inherit;
   text-decoration: none;
   font-size: 14px;
 }
@@ -86,9 +89,4 @@ onMounted(() => {
   color: #f0b31c !important;
 }
 
-.CirclePlus {
-  color: white;
-  font-size: 20px;
-  margin-left: 10px;
-}
 </style>

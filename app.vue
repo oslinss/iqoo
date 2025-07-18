@@ -13,6 +13,7 @@
 .div {
   width: 100%;
 }
+
 </style>
 
 <script setup>

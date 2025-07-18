@@ -479,7 +479,7 @@ li {
 @media (max-width: 767px) {
   .footer-links {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 0 20px;
   }
 

@@ -1,83 +1,109 @@
 <template>
   <div class="container">
-    <img
-      src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1747725005217/2eef30ff0c024e31cffb4d6a06237ae8.jpg"
-      alt="iQOO Neo10 Pro+"
-    />
-    <div class="keyword">
-      <a href="https://www.vivo.com.cn/vivo/iqooneo10proplus/">
-        <h1>
-          <img
-            class="no-flip-over"
-            src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1747725019644/0ad4f860b6bc60ab5715fd9d5c5d636b.svg"
-            alt="iQOO Neo10 Pro+"
-          />
-        </h1>
-        <p>骁龙8至尊，2K Q10 珠峰屏</p>
-      </a>
-
-      <span class="buy">
-        <a href="https://shop.vivo.com.cn/product/10010935" class="action-btn"
-          >立即购买
-          <el-icon class="el-icon"><ArrowRight /></el-icon>
+    <div class="container-item">
+      <img
+        src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1747725005217/2eef30ff0c024e31cffb4d6a06237ae8.jpg"
+        alt="iQOO Neo10 Pro+"
+      />
+      <div class="keyword">
+        <a href="https://www.vivo.com.cn/vivo/iqooneo10proplus/">
+          <h1>
+            <img
+              class="no-flip-over"
+              src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1747725019644/0ad4f860b6bc60ab5715fd9d5c5d636b.svg"
+              alt="iQOO Neo10 Pro+"
+            />
+          </h1>
+          <p>骁龙8至尊，2K Q10 珠峰屏</p>
         </a>
 
-        <a
-          href="https://www.vivo.com.cn/vivo/iqooneo10proplus/"
-          class="action-btn"
-          >了解更多
-          <el-icon class="el-icon"><ArrowRight /></el-icon>
-        </a>
-      </span>
-    </div>
-    <div id="scroll" class="scroll-indicator">
-      <span> 向下滑动 </span>
-      <el-icon class="el-icon"><ArrowDown /></el-icon>
+        <span class="buy">
+          <a href="https://shop.vivo.com.cn/product/10010935" class="action-btn"
+            >立即购买
+            <el-icon class="el-icon"><ArrowRight /></el-icon>
+          </a>
+
+          <a
+            href="https://www.vivo.com.cn/vivo/iqooneo10proplus/"
+            class="action-btn"
+            >了解更多
+            <el-icon class="el-icon"><ArrowRight /></el-icon>
+          </a>
+        </span>
+      </div>
+      <div id="scroll" class="scroll-indicator" :class="{'down-scrolled':isScrolled}">
+        <span> 向下滑动 </span>
+        <el-icon class="el-icon"><ArrowDown /></el-icon>
+      </div>  
     </div>
   </div>
 
   <div class="list">
-    <img
-      src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1746601866775/f61dceebc421efa8b084ae5dbb2f7ba8.jpg"
-    />
-    <img
-      src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1747098987981/b61c2e89c52938ec58b825f8524af1b9.jpg"
-    />
-    <div class="keyword2">
-      <a href="https://www.vivo.com.cn/vivo/iqooz10turbopro/">
-        <h1>
-          <img class="no-flip-over" src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1746601883707/4efa7053bce957083cd3477caa9f0bbc.svg" alt="iQOO Z10 Turbo Pro">
-        </h1>
-        <p>第四代骁龙8S</p>
-      </a>
-
-      <span class="list-buy">
-        <a href="https://shop.vivo.com.cn/product/10010935" class="action-btn"
-          >立即购买 <el-icon class="el-icon"><ArrowRight /></el-icon
-        ></a>
-        <a
-          href="https://www.vivo.com.cn/vivo/iqooz10turbopro/"
-          class="action-btn"
-          >了解更多 <el-icon class="el-icon"><ArrowRight /></el-icon
-        ></a>
-      </span>
+    <div class="list-item">
+      <div class="img-text-block">
+        <img
+          src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1746601866775/f61dceebc421efa8b084ae5dbb2f7ba8.jpg"
+          alt="iQOO Z10 Turbo Pro"
+          class="img-bg"
+        />
+        <div class="keyword2">
+          <a href="https://www.vivo.com.cn/vivo/iqooz10turbopro/">
+            <h1>
+              <img
+                class="no-flip-over"
+                src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1746601883707/4efa7053bce957083cd3477caa9f0bbc.svg"
+                alt="iQOO Z10 Turbo Pro"
+              />
+            </h1>
+            <p>第四代骁龙8S</p>
+          </a>
+          <span class="list-buy">
+            <a
+              href="https://shop.vivo.com.cn/product/10010935"
+              class="action-btn"
+              >立即购买 <el-icon class="el-icon"><ArrowRight /></el-icon
+            ></a>
+            <a
+              href="https://www.vivo.com.cn/vivo/iqooz10turbopro/"
+              class="action-btn"
+              >了解更多 <el-icon class="el-icon"><ArrowRight /></el-icon
+            ></a>
+          </span>
+        </div>
+      </div>
     </div>
-    <div class="keyword3">
-      <a href="https://www.vivo.com.cn/vivo/iqoopad5/">
-        <h1>
-          <img class="no-flip-over" src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1747099000683/fcd87ecdddefdae7b480774b86fc6deb.svg" alt="iQOO Pad5">
-        </h1>
-        <p>12.1英寸高亮电竞屏</p>
-      </a>
-      <span class="list-buy">
-        <a href="https://shop.vivo.com.cn/product/10010935" class="action-btn"
-          >立即购买
-          <el-icon class="el-icon"><ArrowRight /></el-icon>
-        </a>
-        <a href="https://www.vivo.com.cn/vivo/iqoopad5/" class="action-btn"
-          >了解更多 <el-icon class="el-icon"><ArrowRight /></el-icon
-        ></a>
-      </span>
+
+    <div class="list-item">
+      <div class="img-text-block">
+        <img
+          src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1747098987981/b61c2e89c52938ec58b825f8524af1b9.jpg"
+          alt="iQOO Pad5"
+          class="img-bg"
+        />
+        <div class="keyword3">
+          <a href="https://www.vivo.com.cn/vivo/iqoopad5/">
+            <h1>
+              <img
+                class="no-flip-over"
+                src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1747099000683/fcd87ecdddefdae7b480774b86fc6deb.svg"
+                alt="iQOO Pad5"
+              />
+            </h1>
+            <p>12.1英寸高亮电竞屏</p>
+          </a>
+          <span class="list-buy">
+            <a
+              href="https://shop.vivo.com.cn/product/10010935"
+              class="action-btn"
+              >立即购买
+              <el-icon class="el-icon"><ArrowRight /></el-icon>
+            </a>
+            <a href="https://www.vivo.com.cn/vivo/iqoopad5/" class="action-btn"
+              >了解更多 <el-icon class="el-icon"><ArrowRight /></el-icon
+            ></a>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -87,14 +113,14 @@
       <div class="discovery-item break-inside-avoid">
         <div>
           <img
-          src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1746601061915/cd658e81e2b37b3d604a84956f44f3c8.jpg"
-        />
-        <div class="keyword4">
-          <h2>iQOO Neo10</h2>
-          <p>第三代骁龙8</p>
+            src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1746601061915/cd658e81e2b37b3d604a84956f44f3c8.jpg"
+          />
+          <div class="keyword4">
+            <h2>iQOO Neo10</h2>
+            <p>第三代骁龙8</p>
+          </div>
         </div>
-        </div>
-        
+
         <div>
           <img
             src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1747100628566/a8a98c69036f65684400af27789b0ce9.jpg"
@@ -128,10 +154,8 @@
             <P>首批搭载骁龙8至尊版</P>
           </div>
         </div>
-        
-        <div>
-          
-        </div>
+
+        <div></div>
 
         <img
           src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1747099702786/bb03ed0fbd8e5c941408f5ea8b4eb16f.jpg"
@@ -148,18 +172,24 @@
 
 <script setup>
 import { onMounted } from "vue";
+
+const isScrolled = ref(false);
+
 onMounted(() => {
-  const scrollIndicator = document.getElementById("scroll");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      scrollIndicator.style.display = "none";
-    } else {
-      scrollIndicator.style.display = "block";
-    }
-  });
+  const handleScroll = () => {
+    isScrolled.value = window.scrollY > 50;
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  
+  // 组件卸载时移除事件监听
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
 });
 
 import { ArrowDown, ArrowRight } from "@element-plus/icons-vue";
+import { isScroll } from "element-plus/es/utils/index.mjs"; 
 </script>
 
 <style scoped>
@@ -168,6 +198,12 @@ import { ArrowDown, ArrowRight } from "@element-plus/icons-vue";
   height: 100vh;
   position: relative;
   overflow: hidden;
+}
+
+.container-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .container img {
@@ -201,20 +237,26 @@ import { ArrowDown, ArrowRight } from "@element-plus/icons-vue";
 .list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 30px;
   margin: 50px auto;
-  padding: 0 10%;
-  max-width: 80%;
-  border-radius: 10px;
+  padding: 0 5%;
+  max-width: 1200px;
+}
+
+.list-item {
+  width: 100%;
+}
+
+.img-text-block {
+  position: relative;
+  width: 100%;
 }
 
 .list img {
-  margin: 15px;
+  width: 100%;
+  margin: 15px 0;
   border-radius: 16px;
   box-shadow: 0 4px 8px rgba(177, 159, 159, 0.1);
-  position: relative;
 }
 
 .list img:hover,
@@ -236,13 +278,79 @@ img {
   width: 100px;
 }
 
+.keyword, .keyword2, .keyword3 {
+position: absolute;
+text-align: left;
+z-index: 10;
+width: 40%;
+}
+
+.keyword {
+top: 30%;
+left: 8%;
+}
+
+.keyword2 {
+top: 40%;
+left: 5%;
+}
+
+.keyword3 {
+top: 25%;
+left: 7%;
+}
+
+.keyword h1, .keyword2 h1, .keyword3 h1 {
+margin: 0 0 1vw 0;
+padding: 0;
+}
+
+
+.keyword h1 img,
+.keyword2 h1 img,
+.keyword3 h1 img {
+width: 100%; 
+height: auto;
+object-fit: contain; 
+padding: 0;
+margin: 0;
+}
+
+
+.keyword p,
+.keyword2 p,
+.keyword3 p {
+margin: 1vw 0 2vw 0;
+padding: 0;
+font-weight: bold;
+font-size: clamp(1rem, 2.5vw, 1.5rem); 
+}
+
+.keyword a {
+  color: white;
+}
+
+.keyword2 .el-icon {
+  position: relative;
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  margin-left: 10px;
+  border: #000 3px solid;
+}
+
+.buy {
+  line-height: 80px;
+  margin: 1vw 0 2vw 0;
+padding: 0;
+font-size: clamp(1rem, 2.5vw, 1.5rem); 
+}
+
 .buy a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  margin-right: 10px;
   font-size: 20px;
-  padding-bottom: 10px;
+  margin-right: 30px;
 }
 
 .buy a:hover {
@@ -271,67 +379,6 @@ img {
   font-weight: bolder;
 }
 
-.keyword {
-  position: absolute;
-  top: 30%;
-  left: 8%;
-  width: 500px;
-}
-
-.keyword2 {
-  position: absolute;
-  top: 130%;
-  left: 18%;
-}
-
-.keyword3 {
-  position: absolute;
-  top: 210%;
-  left: 20%;
-}
-
-.keyword h1 {
-  font-size: 50px;
-  color: white;
-  margin-bottom: -30px;
-}
-.keyword p {
-  font-size: 30px;
-  color: white;
-  margin-bottom: 50px;
-}
-
-.keyword2 .el-icon {
-  color: rgb(0, 0, 0);
-  font-size: 12px;
-  margin-left: 10px;
-  border: #000 3px solid;
-}
-
-.keyword2 h1 {
-  width: 400px;
-  margin-left: -10px;
-}
-
-.keyword2 h1 img {
-  width: 100%;
-  height: 50px;
-}
-
-.keyword2 p {
-  font: 24px bolder;
-  margin-top: -45px;
-}
-
-.keyword2 a {
-  font-size: 18px;
-  color: black;
-}
-
-.keyword3 p {
-  margin-top: -30px;
-}
-
 .list-buy {
   display: flex;
   padding-top: 30px;
@@ -342,26 +389,15 @@ img {
   color: white;
 }
 
-.keyword3 h1{
-  font-size: 50px;
+.keyword3 h1 {
   color: white;
-  margin-left: -110px;
 }
 
-.keyword3 h1 img {
-  width: 100%;
-  height: 30px;
-}
 
 .keyword3 span a {
   font-size: 18px;
 }
 
-.keyword3 .el-icon {
-  color: rgb(254, 254, 254);
-  font: 12px bolder;
-  margin-left: 10px;
-}
 
 .keyword6,
 .keyword8 {
@@ -373,13 +409,13 @@ img {
   border-radius: 8px;
   max-width: 80%;
   z-index: 2;
-  /* 可根据需要调整字体大小 */
+  box-sizing: border-box;
 }
 
 .keyword4 {
-  position: absolute;
+  position: relative;
   left: 16px;
-  bottom: 360px;
+  bottom: 120px;
   color: white;
   padding: 8px 16px;
   border-radius: 8px;
@@ -432,7 +468,7 @@ img {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   transition: transform 0.2s ease;
-  position: relative;
+  position: relative; /*文字定位*/
   padding: 15px;
 }
 
@@ -450,169 +486,66 @@ img {
 }
 
 /* 响应式设计 */
-/* 平板设备 (768px - 1023px) */
+
 @media (max-width: 1023px) {
   .discovery {
-    grid-template-columns: repeat(2, 1fr);
+    column-count: 1;
   }
 
+  .keyword, .keyword2, .keyword3 {
+width: 50%; /* 中等屏幕文字容器更宽 */
+}
+
+
   .keyword h1 {
-    font-size: 36px;
+    font-size: 16px;
   }
 
   .keyword p {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .keyword2 h1,
   .keyword3 h1 {
-    font-size: 26px;
+    font-size: 8px;
   }
 
   .keyword2 p,
   .keyword3 p {
-    font-size: 18px;
+    font-size: 8px;
   }
 
   .action-btn {
     padding: 12px 24px;
-    font-size: 15px;
+    font-size: 8px;
   }
 
   .discovery-tab h1 {
     font-size: 36px;
   }
-}
-
-/* 移动设备 (最大767px) */
-@media (max-width: 767px) {
-  .container {
-    height: 90vh;
-  }
-
-  .keyword {
-    top: 50%;
-    left: 5%;
-    width: 90%;
-    padding: 15px;
-    transform: translateY(-50%);
-  }
-
-  .keyword h1 {
-    font-size: 28px;
-  }
-
-  .keyword p {
-    font-size: 18px;
-    margin: 10px 0 15px;
-  }
-
-  .buy {
-    margin-top: 15px;
-  }
-
-  .action-btn {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-
-  .scroll-indicator {
-    font-size: 14px;
-    bottom: 20px;
-  }
-
-  .list {
-    margin: 40px auto;
-    gap: 30px;
-  }
-
-  .keyword2,
-  .keyword3 {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 100%;
-    margin-top: -70px;
-    margin-bottom: 20px;
-    padding: 15px;
-  }
-
-  .keyword2 {
-    background: rgba(255, 255, 255, 0.9);
-  }
-
-  .keyword3 {
-    background: rgba(0, 0, 0, 0.6);
-  }
-
-  .keyword2 h1,
-  .keyword3 h1 {
-    font-size: 24px;
-  }
-
-  .keyword2 p,
-  .keyword3 p {
-    font-size: 16px;
-  }
-
-  .discovery {
-    grid-template-columns: 1fr;
-    padding: 0 10px;
-  }
-
-  .discovery-tab h1 {
-    font-size: 32px;
-    margin: 40px 0 20px;
-  }
-
-  .no-flip-over {
-    width: 180px;
-  }
 
   .discovery-item {
-    margin-bottom: 20px;
+    width: 90vw;
+    max-width: 400px;
+    margin: 0 auto 24px auto;
   }
 
-  .section-title {
-    font-size: 28px;
-  }
-
-  .footer-links {
-    gap: 15px;
-  }
 }
-
-/* 小屏幕移动设备 (最大480px) */
-@media (max-width: 480px) {
-  .keyword h1 {
-    font-size: 24px;
+@media (max-width: 767px) {
+  .container,
+  .list,
+  .discovery-tab {
+    padding: 0 0.5rem;
   }
 
-  .keyword p {
-    font-size: 16px;
-  }
-
-  .buy {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .action-btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .discovery-tab h1 {
-    font-size: 28px;
-  }
-
-  .no-flip-over {
-    width: 150px;
-  }
-
-  .keyword2,
-  .keyword3 {
-    margin-top: -50px;
+  .keyword, .keyword2, .keyword3 {
+width: 70%; /* 小屏幕文字容器更宽 */
+}
+  .container h1,
+  .container p,
+  .discovery h2,
+  .discovery p {
+    font-size: 1rem;
   }
 }
 
@@ -648,5 +581,9 @@ img {
   transform: scale(1.05, 0.95);
   border: #f0b31c 3px solid;
   font-size: 20px;
+}
+
+.down-scrolled {
+  display: none;
 }
 </style>

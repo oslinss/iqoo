@@ -4,11 +4,8 @@
         <a class="el-icon">
             <ChatLineSquare />
         </a>
-        <div class="tip">
-            
-        </div>
     </div>
-    <div class="top">
+    <div class="top" :class="{ 'top-scrolled': isScrolled }">
         <a href="#top" class="el-icon">
             <ArrowUp />
         </a>
@@ -16,6 +13,26 @@
     </div>
     
 </template>
+
+<script setup>
+import { ArrowUp, ChatLineSquare } from "@element-plus/icons-vue";
+import { ref, onMounted } from "vue";
+
+const isScrolled = ref(false);
+
+onMounted(() => {
+  const handleScroll = () => {
+    isScrolled.value = window.scrollY < 50;
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  // 组件卸载时移除事件监听
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+});
+</script>
 
 <style scoped>
 .aside {
@@ -53,8 +70,7 @@
     font-size: 30px;
     padding:10px 20px;
 }
+.top-scrolled {
+    display: none;
+}
 </style>
-
-<script setup>  
-import { ArrowUp, ChatLineSquare } from "@element-plus/icons-vue";
-</script>
