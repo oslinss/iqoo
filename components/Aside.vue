@@ -12,7 +12,10 @@
             <div class="feedback">NPS调研，您可以直接反馈产品使用体验及品牌推荐意愿</div>
 
             <div>
+            <a href="https://ai-h5.vivo.com.cn/special-questionnairev2/index.html?id=3125&sign=c99009cd5dd1ff78caf9fae7a101e651#/">
                 <el-button type="warning">点击参与</el-button>
+            </a>
+                
             </div>
             
         </div>

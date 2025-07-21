@@ -39,7 +39,7 @@
   </div>
 
   <div class="list">
-    <div class="list-item">
+    <div class="list-item slide-in" data-delay="0">
       <div class="img-text-block">
         <img
           src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1746601866775/f61dceebc421efa8b084ae5dbb2f7ba8.jpg"
@@ -73,7 +73,7 @@
       </div>
     </div>
 
-    <div class="list-item">
+    <div class="list-item slide-in" data-delay="100">
       <div class="img-text-block">
         <img
           src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1747098987981/b61c2e89c52938ec58b825f8524af1b9.jpg"
@@ -110,7 +110,7 @@
   <div class="discovery-tab">
     <h1>发现</h1>
     <div class="discovery">
-      <div class="discovery-item break-inside-avoid">
+      <div class="discovery-item break-inside-avoid slide-in" data-delay="0">
         <div>
           <img
             src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1746601061915/cd658e81e2b37b3d604a84956f44f3c8.jpg"
@@ -132,7 +132,7 @@
           </div>
         </div>
       </div>
-      <div class="discovery-item break-inside-avoid">
+      <div class="discovery-item break-inside-avoid slide-in" data-delay="150">
         <img
           src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1747117528912/0e9337b9de293bdb8883e77ea11c32d3.jpg"
           alt=""
@@ -143,7 +143,7 @@
         </div>
       </div>
 
-      <div class="discovery-item break-inside-avoid">
+      <div class="discovery-item break-inside-avoid slide-in" data-delay="200">
         <div>
           <img
             src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1740648712335/fc0a8f5038c70730ef23765cd92ec434.jpg"
@@ -171,25 +171,58 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { onMounted,ref} from "vue";
+import { ArrowDown, ArrowRight } from "@element-plus/icons-vue";
 
 const isScrolled = ref(false);
+const animatedElements = ref([]);
+
+// 检查元素是否在视口中
+const isInViewport = (el) => {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85 &&
+    rect.bottom >= 0
+  );
+};
+
+// 处理滚动动画
+const handleScrollAnimation = () => {
+  animatedElements.value.forEach(el => {
+    if (isInViewport(el) && !el.classList.contains('animated')) {
+      // 添加延迟动画效果
+      const delay = el.dataset.delay || 0;
+      setTimeout(() => {
+        el.classList.add('animated');
+      }, delay);
+    }
+  });
+  
+  // 控制向下滚动指示器显示
+  isScrolled.value = window.scrollY > 50;
+};
 
 onMounted(() => {
+  // 获取所有需要动画的元素
+  animatedElements.value = document.querySelectorAll('.slide-in');
+  
+  // 初始检查一次
+  handleScrollAnimation();
+  
+  // 监听滚动事件
   const handleScroll = () => {
-    isScrolled.value = window.scrollY > 50;
+    requestAnimationFrame(handleScrollAnimation);
   };
-
-  window.addEventListener("scroll", handleScroll);
+  
+  window.addEventListener('scroll', handleScroll);
   
   // 组件卸载时移除事件监听
   return () => {
-    window.removeEventListener("scroll", handleScroll);
+    window.removeEventListener('scroll', handleScroll);
   };
 });
 
-import { ArrowDown, ArrowRight } from "@element-plus/icons-vue";
-import { isScroll } from "element-plus/es/utils/index.mjs"; 
+
 </script>
 
 <style scoped>
@@ -585,5 +618,20 @@ width: 70%; /* 小屏幕文字容器更宽 */
 
 .down-scrolled {
   display: none;
+}
+
+/* 滑动动画样式 */
+.slide-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.slide-in.animated {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
