@@ -1,4 +1,12 @@
-# Nuxt Minimal Starter
+# iQOO
+
+本项目是基于Nuxt3和Vue3构建的仿iQOO官方网页
+
+## 主要功能
+
+导航，回到顶部，浮窗提示
+
+## Nuxt Minimal Starter
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
