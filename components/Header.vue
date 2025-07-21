@@ -3,11 +3,11 @@
     <div id="navbar" class="nav" :class="{ 'nav-scrolled': isScrolled }">
       <a class="nav-logo" href="https://www.iqoo.com/cn">IQOO</a>
       <div class="nav-link">
-        <NuxtLink to="/">首页</NuxtLink>
-        <a href="https://www.vivo.com.cn/products-iqoo.html">产品</a>
-        <a href="https://shop.vivo.com.cn/product/list-527">商城</a>
-        <a href="https://www.vivo.com.cn/originos">OriginOS</a>
-        <a href="https://www.vivo.com.cn/service.html">服务</a>
+        <a class="nav-home">首页</a>
+        <a href="https://www.vivo.com.cn/products-iqoo.html" class="nav-product">产品</a>
+        <a href="https://shop.vivo.com.cn/product/list-527" class="nav-shop">商城</a>
+        <a href="https://www.vivo.com.cn/originos" class="nav-origin">OriginOS</a>
+        <a href="https://www.vivo.com.cn/service.html" class="nav-service">服务</a>
       </div>
     </div>
   </div>
@@ -89,4 +89,25 @@ onMounted(() => {
   color: #f0b31c !important;
 }
 
+/* 分辨率提高时逐步隐藏导航链接 */
+@media (max-width: 1500px) {
+  .nav-service { display: none}
+}
+@media (max-width: 1400px) {
+  .nav-origin { display: none}
+}
+@media (max-width: 1300px) {
+  .nav-shop { display: none}
+}
+@media (max-width: 1200px) {
+  .nav-product { display: none}
+}
+@media (max-width: 1000px) {
+  .nav-home { display: none}
+  .nav-logo {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30%;
+  }
+}  
 </style>

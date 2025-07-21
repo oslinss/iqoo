@@ -28,7 +28,7 @@
 
 <script setup>
 import { ArrowUp, ChatLineSquare, Close } from "@element-plus/icons-vue";
-import { ElButton } from "element-plus";
+// import { ElButton } from "element-plus";
 import { ref, onMounted } from "vue";
 
 const isScrolled = ref(false);
