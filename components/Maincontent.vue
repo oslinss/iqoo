@@ -115,7 +115,6 @@
     <h1>发现</h1>
     <div class="discovery">
       <div class="discovery-item break-inside-avoid slide-in" data-delay="0">
-        <div>
           <img
             src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1746601061915/cd658e81e2b37b3d604a84956f44f3c8.jpg"
           />
@@ -123,9 +122,9 @@
             <h2>iQOO Neo10</h2>
             <p>第三代骁龙8</p>
           </div>
-        </div>
+      </div>
 
-        <div>
+      <div class="discovery-item break-inside-avoid slide-in" data-delay="150">
           <img
             src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1747100628566/a8a98c69036f65684400af27789b0ce9.jpg"
             alt=""
@@ -135,7 +134,7 @@
             <p>第三代骁龙8s</p>
           </div>
         </div>
-      </div>
+
       <div class="discovery-item break-inside-avoid slide-in" data-delay="150">
         <img
           src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1747117528912/0e9337b9de293bdb8883e77ea11c32d3.jpg"
@@ -146,9 +145,7 @@
           <p>22天蓝牙续航</p>
         </div>
       </div>
-
       <div class="discovery-item break-inside-avoid slide-in" data-delay="200">
-        <div>
           <img
             src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1740648712335/fc0a8f5038c70730ef23765cd92ec434.jpg"
             alt=""
@@ -159,7 +156,9 @@
           </div>
         </div>
 
-        <div></div>
+      <div class="discovery-item break-inside-avoid slide-in" data-delay="200">
+        
+
 
         <img
           src="https://cn-exstatic-vivofs.iqoo.com/Br81IMbjh1IEtVmx/1747099702786/bb03ed0fbd8e5c941408f5ea8b4eb16f.jpg"
@@ -461,7 +460,7 @@ img {
   border-radius: 8px;
   max-width: 80%;
   z-index: 2;
-  /* 可根据需要调整字体大小 */
+  margin-bottom: -10px;
 }
 
 .discovery-item h2,
@@ -503,7 +502,7 @@ img {
 
 .discovery-item {
   break-inside: avoid;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -517,8 +516,8 @@ img {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  /* margin-bottom: 15px; */
+  margin-top: 30px;
   display: block;
 }
 
@@ -544,7 +543,11 @@ img {
   }
 
   .keyword p {
-    font-size: 20px;
+    font-size: 14px;
+  }
+
+  .buy {
+    font-size: 12px;
   }
 
   .keyword2 h1,

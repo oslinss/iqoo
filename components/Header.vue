@@ -20,7 +20,7 @@ const isScrolled = ref(false);
 
 onMounted(() => {
   const handleScroll = () => {
-    isScrolled.value = window.scrollY > 50;
+    isScrolled.value = window.scrollY > 150;
   };
 
   window.addEventListener("scroll", handleScroll);
@@ -73,6 +73,7 @@ onMounted(() => {
   justify-content: center;
   width: auto;
 }
+
 .nav-link a {
   color: inherit;
   text-decoration: none;
