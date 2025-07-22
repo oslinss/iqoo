@@ -31,10 +31,14 @@
           </a>
         </span>
       </div>
-      <div id="scroll" class="scroll-indicator" :class="{'down-scrolled':isScrolled}">
+      <div
+        id="scroll"
+        class="scroll-indicator"
+        :class="{ 'down-scrolled': isScrolled }"
+      >
         <span> 向下滑动 </span>
         <el-icon class="el-icon"><ArrowDown /></el-icon>
-      </div>  
+      </div>
     </div>
   </div>
 
@@ -171,7 +175,7 @@
 </template>
 
 <script setup>
-import { onMounted,ref} from "vue";
+import { onMounted, ref } from "vue";
 import { ArrowDown, ArrowRight } from "@element-plus/icons-vue";
 
 const isScrolled = ref(false);
@@ -181,48 +185,47 @@ const animatedElements = ref([]);
 const isInViewport = (el) => {
   const rect = el.getBoundingClientRect();
   return (
-    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85 &&
+    rect.top <=
+      (window.innerHeight || document.documentElement.clientHeight) * 0.85 &&
     rect.bottom >= 0
   );
 };
 
 // 处理滚动动画
 const handleScrollAnimation = () => {
-  animatedElements.value.forEach(el => {
-    if (isInViewport(el) && !el.classList.contains('animated')) {
+  animatedElements.value.forEach((el) => {
+    if (isInViewport(el) && !el.classList.contains("animated")) {
       // 添加延迟动画效果
       const delay = el.dataset.delay || 0;
       setTimeout(() => {
-        el.classList.add('animated');
+        el.classList.add("animated");
       }, delay);
     }
   });
-  
+
   // 控制向下滚动指示器显示
   isScrolled.value = window.scrollY > 50;
 };
 
 onMounted(() => {
   // 获取所有需要动画的元素
-  animatedElements.value = document.querySelectorAll('.slide-in');
-  
+  animatedElements.value = document.querySelectorAll(".slide-in");
+
   // 初始检查一次
   handleScrollAnimation();
-  
+
   // 监听滚动事件
   const handleScroll = () => {
     requestAnimationFrame(handleScrollAnimation);
   };
-  
-  window.addEventListener('scroll', handleScroll);
-  
+
+  window.addEventListener("scroll", handleScroll);
+
   // 组件卸载时移除事件监听
   return () => {
-    window.removeEventListener('scroll', handleScroll);
+    window.removeEventListener("scroll", handleScroll);
   };
 });
-
-
 </script>
 
 <style scoped>
@@ -311,52 +314,54 @@ img {
   width: 100px;
 }
 
-.keyword, .keyword2, .keyword3 {
-position: absolute;
-text-align: left;
-z-index: 10;
-width: 40%;
+.keyword,
+.keyword2,
+.keyword3 {
+  position: absolute;
+  text-align: left;
+  z-index: 10;
+  width: 40%;
 }
 
 .keyword {
-top: 30%;
-left: 8%;
+  top: 30%;
+  left: 8%;
 }
 
 .keyword2 {
-top: 40%;
-left: 5%;
+  top: 40%;
+  left: 5%;
 }
 
 .keyword3 {
-top: 25%;
-left: 7%;
+  top: 25%;
+  left: 7%;
 }
 
-.keyword h1, .keyword2 h1, .keyword3 h1 {
-margin: 0 0 1vw 0;
-padding: 0;
+.keyword h1,
+.keyword2 h1,
+.keyword3 h1 {
+  margin: 0 0 1vw 0;
+  padding: 0;
 }
-
 
 .keyword h1 img,
 .keyword2 h1 img,
 .keyword3 h1 img {
-width: 100%; 
-height: auto;
-object-fit: contain; 
-padding: 0;
-margin: 0;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  padding: 0;
+  margin: 0;
 }
-
 
 .keyword p,
 .keyword2 p,
 .keyword3 p {
-margin: 1vw 0 2vw 0;
-padding: 0;
-font-weight: bold;
-font-size: clamp(1rem, 2.5vw, 1.5rem); 
+  margin: 1vw 0 2vw 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
 }
 
 .keyword a {
@@ -374,8 +379,12 @@ font-size: clamp(1rem, 2.5vw, 1.5rem);
 .buy {
   line-height: 80px;
   margin: 1vw 0 2vw 0;
-padding: 0;
-font-size: clamp(1rem, 2.5vw, 1.5rem); 
+  padding: 0;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.list-buy {
+  margin: 0;
 }
 
 .buy a {
@@ -383,7 +392,7 @@ font-size: clamp(1rem, 2.5vw, 1.5rem);
   text-decoration: none;
   font-weight: bold;
   font-size: 20px;
-  margin-right: 30px;
+  padding-right: 30px;
 }
 
 .buy a:hover {
@@ -393,14 +402,14 @@ font-size: clamp(1rem, 2.5vw, 1.5rem);
 }
 
 .list-buy a {
-  margin-right: 25px;
+  padding: 25px 25px 25px 0;
+  font-size: 16px;
 }
 
-.list-buy a:hover,
-.list-buy:hover {
+.list-buy a:hover {
   color: #f0b31c;
   transition: transform 0.3s ease;
-  transform: scale(1.05, 0.95);
+  transform: scale(1.01, 0.95);
 }
 
 .discovery h2 {
@@ -426,11 +435,9 @@ font-size: clamp(1rem, 2.5vw, 1.5rem);
   color: white;
 }
 
-
 .keyword3 span a {
   font-size: 18px;
 }
-
 
 .keyword6,
 .keyword8 {
@@ -467,6 +474,7 @@ font-size: clamp(1rem, 2.5vw, 1.5rem);
 .keyword5,
 .keyword7 {
   margin-left: 15px;
+  padding:25px 0;
 }
 
 .keyword7 p,
@@ -525,10 +533,11 @@ font-size: clamp(1rem, 2.5vw, 1.5rem);
     column-count: 1;
   }
 
-  .keyword, .keyword2, .keyword3 {
-width: 50%; /* 中等屏幕文字容器更宽 */
-}
-
+  .keyword,
+  .keyword2,
+  .keyword3 {
+    width: 50%; /* 中等屏幕文字容器更宽 */
+  }
 
   .keyword h1 {
     font-size: 16px;
@@ -563,6 +572,9 @@ width: 50%; /* 中等屏幕文字容器更宽 */
     margin: 0 auto 24px auto;
   }
 
+  .scroll-indicator {
+    display: none;
+  }
 }
 @media (max-width: 767px) {
   .container,
@@ -571,14 +583,30 @@ width: 50%; /* 中等屏幕文字容器更宽 */
     padding: 0 0.5rem;
   }
 
-  .keyword, .keyword2, .keyword3 {
-width: 70%; /* 小屏幕文字容器更宽 */
-}
+  .keyword,
+  .keyword2,
+  .keyword3 {
+    width: 70%; /* 小屏幕文字容器更宽 */
+  }
   .container h1,
   .container p,
   .discovery h2,
   .discovery p {
     font-size: 1rem;
+  }
+
+  .discovery {
+    width: 50%;
+    max-width: 100px;
+  }
+
+  .discovery img {
+    width: 50%;
+    max-width: 50px;
+  }
+
+  .scroll-indicator {
+    display: none;
   }
 }
 
@@ -599,6 +627,74 @@ width: 70%; /* 小屏幕文字容器更宽 */
   margin: 15px auto;
   border-radius: 2px;
 }
+
+/* 滑动动画样式 */
+.slide-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.slide-in.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.action-btn {
+  display: inline-block;
+  align-items: center;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.action-btn:hover {
+  transform: scale(1.05, 0.95);
+}
+
+.action-btn .el-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin-left: 10px;
+  border: #f8f3f3 3px solid;
+}
+
+.action-btn:hover .el-icon {
+  transform: translateX(5px) scale(1.3);
+}
+
+.action-btn:hover .el-icon :deep(svg) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/*显示圆点并位于右侧*/
+.action-btn .el-icon::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  transform: scale(0) translateX(0);
+  opacity: 0;
+  transition: all 0.3s ease;
+  right: 6px;
+}
+
+.action-btn:hover .el-icon::after {
+  transform: scaleX(1.05);
+  opacity: 1;
+}
+
+.keyword2 .action-btn .el-icon::after,
+.keyword5 .action-btn .el-icon::after,
+.keyword7 .action-btn .el-icon::after {
+  background: black;
+}
 .el-icon {
   margin-left: 5px;
   color: white;
@@ -608,30 +704,21 @@ width: 70%; /* 小屏幕文字容器更宽 */
   padding: 5px 15px;
 }
 
-.el-icon:hover {
+.keyword2 .el-icon {
+  border-color: #000;
+  color: #000;
+}
+
+.keyword2 .action-btn:hover .el-icon {
+  border-color: #f0b31c;
+}
+
+.action-btn:hover .el-icon {
   color: #f0b31c;
-  transition: transform 0.3s ease;
-  transform: scale(1.05, 0.95);
-  border: #f0b31c 3px solid;
-  font-size: 20px;
+  border-color: #f0b31c;
 }
 
 .down-scrolled {
   display: none;
-}
-
-/* 滑动动画样式 */
-.slide-in {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: 
-    opacity 0.8s ease-out,
-    transform 0.8s ease-out;
-  will-change: opacity, transform;
-}
-
-.slide-in.animated {
-  opacity: 1;
-  transform: translateY(0);
 }
 </style>

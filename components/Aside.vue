@@ -78,6 +78,9 @@ onMounted(() => {
     background-color: rgba(109, 102, 102, 0.71);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+.top:visited {
+    border: 2px solid white;
+}
 .check:hover {
     background-color: rgba(247, 179, 6, 0.489);
     box-shadow: 0 0 10px rgba(242, 239, 239, 0.1);
