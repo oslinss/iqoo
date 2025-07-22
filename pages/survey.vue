@@ -6,6 +6,6 @@
 
 <script>
 definePageMeta({
-    layout:"about"
+    layout:"default"
 })
 </script>
