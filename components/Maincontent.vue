@@ -680,7 +680,7 @@ img {
   position: absolute;
   width: 8px;
   height: 8px;
-  background: white;
+  background: #f0b31c;
   border-radius: 50%;
   transform: scale(0) translateX(0);
   opacity: 0;
@@ -696,11 +696,12 @@ img {
 .keyword2 .action-btn .el-icon::after,
 .keyword5 .action-btn .el-icon::after,
 .keyword7 .action-btn .el-icon::after {
-  background: black;
+  background: #f0b31c;
 }
+
 .el-icon {
   margin-left: 5px;
-  color: white;
+  color: rgb(248, 248, 248);
   font: 14px bolder;
   border: #fff 3px solid;
   border-radius: 16px;
