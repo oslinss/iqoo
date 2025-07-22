@@ -154,19 +154,21 @@
   display: flex;
   flex-direction: column;
   font-size: 15px;
+  font-weight: 500;
   margin-right: 80px;
   margin-top: 20px;
 }
 .link-right p {
   color: white;
   font-size: 26px;
-  font-weight: bold;
+  font-weight: 500;
   margin-top: 10px;
   text-align: center;
 }
 .footer-links a {
-  color: #8c919b;
-  font: 13px bold;
+  color: #c2c5cc;
+  font-size: 13px;
+  font-weight: 500;
   text-decoration: none;
   margin-top: 30px;
   padding: 10px 0;
@@ -194,8 +196,9 @@ li {
   padding-top: 10px;
 }
 .ps {
-  color: #8c919b;
+  color: #c2c5cc;
   font-size: 12px;
+  font-weight: 700;
   padding: 20px;
   margin-left: 60px;
 }
