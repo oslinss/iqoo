@@ -200,7 +200,7 @@ li {
   font-size: 12px;
   font-weight: 700;
   padding: 20px;
-  margin-left: 60px;
+  margin-left: 40px;
 }
 
 .social-icons {
