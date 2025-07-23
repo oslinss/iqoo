@@ -1,9 +1,9 @@
 <template>
-    <Survey/>
+    <Question />
 </template>
 
 <script>
 definePageMeta({
-    layout:"custom",
+    layout:"question",
 })
 </script>
