@@ -2,7 +2,7 @@
     <Survey/>
 </template>
 
-<script>
+<script setup>
 definePageMeta({
     layout:"custom",
 })

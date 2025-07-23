@@ -43,7 +43,7 @@ onMounted(() => {
 
 <style scoped>
 .aside {
-  z-index: 2000;
+  z-index: 1002;
   position: fixed;
 }
 .check,
@@ -56,7 +56,6 @@ onMounted(() => {
   right: 50px;
   border-radius: 24px;
 }
-
 .check {
     bottom: 160px;
 }
@@ -64,14 +63,11 @@ onMounted(() => {
     bottom: 100px;
 }
 .top:hover {
-  background-color: rgba(255, 255, 255, 0.416);
+  background-color: rgba(255, 255, 255, 0.711);
   box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 8px;
 }
-.top:visited {
-  border: 2px solid white;
-}
 .check:hover {
-  background-color: rgba(255, 255, 255, 0.897);
+  background-color: rgba(255, 255, 255, 0.711);
   box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 8px;
 }
 .el-icon {
