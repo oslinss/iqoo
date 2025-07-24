@@ -2,6 +2,7 @@
     <div>
         <Header/>
         <slot/>
+        <Aside/>
         <Footer/>
     </div>
 </template>

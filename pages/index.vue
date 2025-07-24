@@ -1,7 +1,7 @@
 <template>
     <div>
         <MainContent/>
-        <Aside/>
+        <!-- <Aside/> -->
     </div>
 </template>
 

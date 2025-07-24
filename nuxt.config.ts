@@ -24,3 +24,4 @@ export default defineNuxtConfig({
   //   // icon: undefined
   // },
 })
+
