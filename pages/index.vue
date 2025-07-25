@@ -1,7 +1,6 @@
 <template>
     <div>
         <MainContent/>
-        <!-- <Aside/> -->
     </div>
 </template>
 

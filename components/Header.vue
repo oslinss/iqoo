@@ -1,10 +1,10 @@
 <template>
   <div class="header">
     <div id="navbar" class="nav" :class="{ 'nav-scrolled': isScrolled }">
-      <a class="nav-logo" href="https://www.iqoo.com/cn">IQOO</a>
+      <a class="nav-logo" href="https://www.iqoo.com/cn">iQOO</a>
       <div class="nav-link">
         <a class="nav-home">首页</a>
-        <a href="https://www.vivo.com.cn/products-iqoo.html" class="nav-product">产品</a>
+        <nuxt-link to="/product" class="nav-product">产品</nuxt-link>
         <a href="https://shop.vivo.com.cn/product/list-527" class="nav-shop">商城</a>
         <a href="https://www.vivo.com.cn/originos" class="nav-origin">OriginOS</a>
         <a href="https://www.vivo.com.cn/service.html" class="nav-service">服务</a>
