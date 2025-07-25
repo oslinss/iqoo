@@ -52,6 +52,12 @@
           <div><a href="https://www.vivo.com.cn/products-accessory.htmll">智能硬件</a></div>
           <div><a href="https://shop.vivo.com.cn/">商城</a></div>
           <div><a href="https://www.vivo.com.cn/service.html">服务</a></div>
+          <!-- <div
+            v-for="(item, index) in NavData"
+            :key="index"
+          >
+            <a :href="item.url">{{ item.label }}</a>
+          </div> -->
         </div>
         <div class="search">
           <el-icon @click="showSearch"><Search /></el-icon>
@@ -133,6 +139,7 @@
 
 <script setup>
 import { Download, Search, Upload, UserFilled } from "@element-plus/icons-vue";
+// import {NavData} from "~/data/NavData.ts";
 </script>
 
 <style scoped>
@@ -140,6 +147,9 @@ import { Download, Search, Upload, UserFilled } from "@element-plus/icons-vue";
   width: 100%;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: -45px;
+  z-index: 1005;
 }
 
 .nav {
@@ -173,6 +183,7 @@ import { Download, Search, Upload, UserFilled } from "@element-plus/icons-vue";
 
 .download-container {
   position: relative;
+  z-index: 1006;
 }
 
 .download-app {
@@ -230,6 +241,7 @@ import { Download, Search, Upload, UserFilled } from "@element-plus/icons-vue";
 
 .personal-center {
   position: relative;
+  z-index: 1006;
 }
 
 .personal-dropdown {
@@ -291,7 +303,7 @@ import { Download, Search, Upload, UserFilled } from "@element-plus/icons-vue";
 .sticky-header {
   position: sticky;
   top: 0;
-  z-index: 1003;
+  z-index: 1005;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
