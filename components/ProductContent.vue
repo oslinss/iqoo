@@ -34,12 +34,13 @@
         </div>
       </div>
     </div>
+    
     <div class="product-list">
       <div
         class="product-item"
         :class="item.name.replace(/\s+/g, '-')"
         v-for="(item, index) in ProductData.data"
-        :key="index"
+        :key="'initial-' + index"
       >
         <div>
           <img class="product-thumb" :src="item.image" />
@@ -52,7 +53,6 @@
         <div class="item-message">
           <span class="item-name">{{ item.name }}</span>
           <p class="item-description">{{ item.description }}</p>
-          <!-- 修改详情和购买部分 -->
           <div class="link">
             <div class="detail">
               <a :href="item.detailUrl" class="detail-link"
@@ -63,24 +63,66 @@
             <div class="shop">
               <a :href="item.buyUrl" class="shop-link"
                 >购买
-                  <el-icon><ArrowRight /></el-icon>
-                </a>
+                <el-icon><ArrowRight /></el-icon>
+              </a>
             </div>
           </div>
         </div>
       </div>
       
+      <div
+        class="product-item"
+        :class="item.name.replace(/\s+/g, '-')"
+        v-for="(item, index) in MoreData.data"
+        :key="'more-' + index"
+        v-if="showMore"
+      >
+        <div>
+          <img class="product-thumb" :src="item.image" />
+        </div>
+        <div class="item-color">
+          <span style="background: #f2f2f2"></span>
+          <span style="background: #262626"></span>
+          <span style="background: #ad4144"></span>
+        </div>
+        <div class="item-message">
+          <span class="item-name">{{ item.name }}</span>
+          <p class="item-description">{{ item.description }}</p>
+          <div class="link">
+            <div class="detail">
+              <a :href="item.detailUrl" class="detail-link"
+                >详情
+                <el-icon><ArrowRight /></el-icon>
+              </a>
+            </div>
+            <div class="shop">
+              <a :href="item.buyUrl" class="shop-link"
+                >购买
+                <el-icon><ArrowRight /></el-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="load-more">
+    
+
+    <div class="load-more-tab" v-if="!showMore">
+      <div class="load-more" @click="showMore = true">
         加载更多
         <el-icon><ArrowDown /></el-icon>
       </div>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ArrowRight, ArrowDown } from "@element-plus/icons-vue";
 import { ProductData } from "~/data/ProductData.ts";
+import { MoreData } from "~/data/MoreData.ts";
+import { ref } from "vue";
+
+const showMore = ref(false);
 </script>
 
 <style scoped>
@@ -214,6 +256,7 @@ import { ProductData } from "~/data/ProductData.ts";
   border-color: #f0b31c;
 }
 
+
 .product-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -278,11 +321,7 @@ import { ProductData } from "~/data/ProductData.ts";
   flex-direction: row;
 }
 
-.link .detail {
-  font-size: 14px;
-  font-weight: 500;
-}
-
+.link .detail,
 .link .shop {
   font-size: 14px;
   font-weight: 500;
@@ -302,19 +341,35 @@ import { ProductData } from "~/data/ProductData.ts";
   font-size: 12px;
 }
 
+.load-more-tab {
+  margin: 50px 0;
+}
+
 .load-more {
   display: flex;
   justify-content: center;
+  align-items: center;
   color: #8a8f99;
   font-size: 22px;
   line-height: 28px;
-  margin-top: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 10px 0;
+}
+
+.load-more:hover {
+  color: #415fff;
+  transform: translateY(3px);
 }
 
 .load-more .el-icon {
   margin-left: 10px;
   transition: transform 0.3s ease;
   font-size: 26px;
+}
+
+.load-more:hover .el-icon {
+  transform: translateY(3px);
 }
 
 /* 响应式设计 */

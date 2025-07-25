@@ -65,10 +65,6 @@
                 <el-icon><Close /></el-icon>
               </div>
             </div>
-            <!-- <div class="search-history">
-              <div></div>
-              <div></div>
-            </div> -->
             <div class="search-page" v-if="showSearchPage">
       <div class="search-page-header">
         <div class="search-logo">ViVO</div>

@@ -18,9 +18,9 @@
       :class="{ 'top-hidden': !isScrolled }"
       @click.prevent="scrollToTop"
     >
-      <a href="#top" class="el-icon">
+      <div class="el-icon">
         <ArrowUp />
-      </a>
+      </div>
     </div>
   </div>
 </template>
@@ -58,6 +58,10 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+.okkk {
+  width: 20px;
+  height: 20px;
+}
 .aside {
   z-index: 1002;
   position: fixed;
@@ -97,6 +101,8 @@ onUnmounted(() => {
   font-size: 26px;
   padding: 11px;
   transition: color 0.3s ease;
+  width: 20px;
+  height: 20px;
 }
 
 .check:hover .el-icon,
