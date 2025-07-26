@@ -88,11 +88,10 @@ onUnmounted(() => {
   margin-bottom: 10px;
 }
 
-/* 悬停效果 */
 .check:hover,
 .top:hover {
-  background-color: #f5f5f5;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff98;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.492);
   transform: translateY(-2px);
 }
 
@@ -105,11 +104,6 @@ onUnmounted(() => {
   height: 20px;
 }
 
-.check:hover .el-icon,
-.top:hover .el-icon {
-  color: #f0b31c;
-}
-
 /* 回到顶部按钮显示/隐藏控制 */
 .top-hidden {
   opacity: 0;
@@ -118,7 +112,6 @@ onUnmounted(() => {
   transition: all 0.3s ease;
 }
 
-/* 提示框样式 */
 .tip {
   position: absolute;
   right: 120%;

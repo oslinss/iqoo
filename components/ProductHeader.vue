@@ -28,14 +28,20 @@
           <a href="" class="personal-link">个人中心</a>
           <div class="personal-dropdown">
             <div>
-              <a href="https://passport.vivo.com.cn/v3/web/login/authorize?client_id=30&redirect_uri=https%3A%2F%2Fwww.vivo.com.cn%2Fproducts-iqoo.html">
+              <a
+                href="https://passport.vivo.com.cn/v3/web/login/authorize?client_id=30&redirect_uri=https%3A%2F%2Fwww.vivo.com.cn%2Fproducts-iqoo.html"
+              >
                 <el-icon><Upload /></el-icon>
-                登录</a>
+                登录</a
+              >
             </div>
             <div>
-              <a href="https://passport.vivo.com.cn/#/register?client_id=30&redirect_uri=https%3A%2F%2Fwww.vivo.com.cn%2Fproducts-iqoo.html">
+              <a
+                href="https://passport.vivo.com.cn/#/register?client_id=30&redirect_uri=https%3A%2F%2Fwww.vivo.com.cn%2Fproducts-iqoo.html"
+              >
                 <el-icon><UserFilled /></el-icon>
-                注册</a>
+                注册</a
+              >
             </div>
           </div>
         </div>
@@ -48,8 +54,14 @@
           <div><a href="https://www.vivo.com.cn/products-x.html">X系列</a></div>
           <div><a href="https://www.vivo.com.cn/products-s.html">S系列</a></div>
           <div><a href="https://www.vivo.com.cn/products-y.html">Y系列</a></div>
-          <div><a href="https://www.vivo.com.cn/products-iqoo.html">iQOO手机</a></div>
-          <div><a href="https://www.vivo.com.cn/products-accessory.htmll">智能硬件</a></div>
+          <div>
+            <a href="https://www.vivo.com.cn/products-iqoo.html">iQOO手机</a>
+          </div>
+          <div>
+            <a href="https://www.vivo.com.cn/products-accessory.htmll"
+              >智能硬件</a
+            >
+          </div>
           <div><a href="https://shop.vivo.com.cn/">商城</a></div>
           <div><a href="https://www.vivo.com.cn/service.html">服务</a></div>
           <!-- <div
@@ -72,41 +84,55 @@
               </div>
             </div>
             <div class="search-page" v-if="showSearchPage">
-      <div class="search-page-header">
-        <div class="search-logo">ViVO</div>
-        <el-icon class="close-icon" @click="showSearchPage = false"><Close /></el-icon>
-      </div>
-      
-      <div class="search-page-content">
-        <div class="search-input-container">
-          <el-icon class="search-input-icon"><Search /></el-icon>
-          <input 
-            type="text" 
-            placeholder="" 
-            class="search-input"
-            v-model="searchKeyword"
-            @keyup.enter="handleSearch"
-          />
-        </div>
-        
-        <div class="search-hot">
-          <h3>热门搜索</h3>
-          <div class="hot-tags">
-            <span v-for="tag in hotTags" :key="tag" @click="searchKeyword = tag">{{ tag }}</span>
-          </div>
-        </div>
-        
-        <div class="search-history" v-if="searchHistory.length > 0">
-          <div class="history-header">
-            <h3>搜索历史</h3>
-            <span class="clear-history" @click="clearHistory">清空历史</span>
-          </div>
-          <div class="history-tags">
-            <span v-for="(item, index) in searchHistory" :key="index" @click="searchKeyword = item">{{ item }}</span>
-          </div>
-        </div>
-      </div>
-    </div>
+              <div class="search-page-header">
+                <div class="search-logo">ViVO</div>
+                <el-icon class="close-icon" @click="showSearchPage = false"
+                  ><Close
+                /></el-icon>
+              </div>
+
+              <div class="search-page-content">
+                <div class="search-input-container">
+                  <el-icon class="search-input-icon"><Search /></el-icon>
+                  <input
+                    type="text"
+                    placeholder=""
+                    class="search-input"
+                    v-model="searchKeyword"
+                    @keyup.enter="handleSearch"
+                  />
+                </div>
+
+                <div class="search-hot">
+                  <h3>热门搜索</h3>
+                  <div class="hot-tags">
+                    <span
+                      v-for="tag in hotTags"
+                      :key="tag"
+                      @click="searchKeyword = tag"
+                      >{{ tag }}</span
+                    >
+                  </div>
+                </div>
+
+                <div class="search-history" v-if="searchHistory.length > 0">
+                  <div class="history-header">
+                    <h3>搜索历史</h3>
+                    <span class="clear-history" @click="clearHistory"
+                      >清空历史</span
+                    >
+                  </div>
+                  <div class="history-tags">
+                    <span
+                      v-for="(item, index) in searchHistory"
+                      :key="index"
+                      @click="searchKeyword = item"
+                      >{{ item }}</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -145,8 +171,8 @@ import { Download, Search, Upload, UserFilled } from "@element-plus/icons-vue";
 <style scoped>
 .product-header {
   width: 100%;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #edeff2;
+  /* box-shadow: 0 0 2px rgba(239, 233, 233, 0); */
   position: sticky;
   top: -45px;
   z-index: 1005;
@@ -259,7 +285,7 @@ import { Download, Search, Upload, UserFilled } from "@element-plus/icons-vue";
 }
 
 .personal-dropdown div {
-  text-align: center; 
+  text-align: center;
   margin: 5px 0;
   width: 100%;
 }
@@ -289,6 +315,7 @@ import { Download, Search, Upload, UserFilled } from "@element-plus/icons-vue";
   border-bottom: 8px solid #fff;
 }
 
+.personal-center:hover .personal-dropdown,
 .personal-link:hover + .personal-dropdown,
 .personal-dropdown:hover {
   display: flex;
@@ -301,11 +328,8 @@ import { Download, Search, Upload, UserFilled } from "@element-plus/icons-vue";
 }
 
 .sticky-header {
-  position: sticky;
-  top: 0;
-  z-index: 1005;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #edeff2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.021);
 }
 
 .header-content {
@@ -370,5 +394,4 @@ import { Download, Search, Upload, UserFilled } from "@element-plus/icons-vue";
   font-weight: 500;
   color: #000000;
 }
-
 </style>

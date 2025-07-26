@@ -51,7 +51,9 @@
           <span style="background: #ad4144"></span>
         </div>
         <div class="item-message">
-          <span class="item-name">{{ item.name }}</span>
+          <div class="item-name">{{ item.name }}
+            <span>缺货</span>
+          </div>
           <p class="item-description">{{ item.description }}</p>
           <div class="link">
             <div class="detail">
@@ -132,8 +134,8 @@ const showMore = ref(false);
   position: relative;
   overflow: hidden;
   padding-bottom: 50px;
+  background-color: #edeff2;
 }
-
 .product-detail {
   position: relative;
   width: 90%;
@@ -141,7 +143,7 @@ const showMore = ref(false);
   margin: 50px auto;
   border: 2px solid #ffffff;
   border-radius: 20px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0);
   overflow: hidden;
 }
 
@@ -194,7 +196,7 @@ const showMore = ref(false);
 }
 
 .buy a:hover {
-  color: #f0b31c;
+  color: #415fff;
   transition: transform 0.3s ease;
   transform: scale(1.05, 0.95);
 }
@@ -238,7 +240,7 @@ const showMore = ref(false);
   position: absolute;
   width: 8px;
   height: 8px;
-  background: #f0b31c;
+  background: #415fff;
   border-radius: 50%;
   transform: scale(0) translateX(0);
   opacity: 0;
@@ -252,8 +254,8 @@ const showMore = ref(false);
 }
 
 .action-btn:hover .el-icon {
-  color: #f0b31c;
-  border-color: #f0b31c;
+  color: #415fff;
+  border-color: #415fff;
 }
 
 
@@ -271,9 +273,6 @@ const showMore = ref(false);
   padding: 15px;
   transition: all 0.3s;
   text-align: center;
-}
-
-.product-item:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transform: translateY(-5px);
 }
@@ -306,6 +305,16 @@ const showMore = ref(false);
 .item-name {
   font-weight: 500;
   font-size: 1.7rem;
+}
+
+.item-name span {
+  color: #575c66;
+  font-size: 0.5rem;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  padding: 2px 6px;
+  border: 1px solid #575c66;
+  border-radius: 12px;
 }
 
 .item-description {
