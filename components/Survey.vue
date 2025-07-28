@@ -10,11 +10,6 @@
         iQOO官方特邀宁填答这份问卷，将您真实的感受和建议告诉我们。您所填的全部信息我们将严格保密，只用于内部分析与改进体验使用，不用与任何商业目的。如已知悉，请您开始答题；反之，您可退出此页面。
       </p>
     </div>
-    <!-- <nuxt-link to="/questionsingle">
-                <div class="button">
-            <el-button type="primary">开始答题</el-button>
-            </div>
-            </nuxt-link> -->
     <div class="button">
       <el-button type="primary"
         ><a

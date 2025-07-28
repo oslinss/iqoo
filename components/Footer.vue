@@ -370,6 +370,6 @@ import {
   FolderAdd,
   DocumentChecked,
 } from "@element-plus/icons-vue";
-import { FooterData } from "~/data/FooterData";
-import { CodeData } from "~/data/CodeData";
+import CodeData from '../src/assets/data/CodeData.json';
+import FooterData from '../src/assets/data/FooterData.json';
 </script>

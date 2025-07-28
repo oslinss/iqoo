@@ -395,7 +395,6 @@ import {
   DocumentChecked,
   Service
 } from "@element-plus/icons-vue";
-import { ProductFooter } from "~/data/ProductFooter";
-import { CodeData } from "~/data/CodeData";
-import { ProductCode } from "../data/ProductCode";
+import ProductFooter  from '../src/assets/data/ProductFooter.json';
+import ProductCode from '../src/assets/data/ProductCode.json'
 </script>

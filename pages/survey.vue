@@ -1,8 +1,7 @@
 <template>
     <div>
-         <Survey/>
+        <Survey/>
     </div>
-   
 </template>
 
 <script setup>

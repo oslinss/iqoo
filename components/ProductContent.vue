@@ -72,40 +72,41 @@
         </div>
       </div>
       
-      <div
-        class="product-item"
-        :class="item.name.replace(/\s+/g, '-')"
-        v-for="(item, index) in MoreData.data"
-        :key="'more-' + index"
-        v-if="showMore"
-      >
-        <div>
-          <img class="product-thumb" :src="item.image" />
-        </div>
-        <div class="item-color">
-          <span style="background: #f2f2f2"></span>
-          <span style="background: #262626"></span>
-          <span style="background: #ad4144"></span>
-        </div>
-        <div class="item-message">
-          <span class="item-name">{{ item.name }}</span>
-          <p class="item-description">{{ item.description }}</p>
-          <div class="link">
-            <div class="detail">
-              <a :href="item.detailUrl" class="detail-link"
-                >详情
-                <el-icon><ArrowRight /></el-icon>
-              </a>
-            </div>
-            <div class="shop">
-              <a :href="item.buyUrl" class="shop-link"
-                >购买
-                <el-icon><ArrowRight /></el-icon>
-              </a>
+      <template v-if="showMore">
+        <div
+          class="product-item"
+          :class="item.name.replace(/\s+/g, '-')"
+          v-for="(item, index) in MoreData.data"
+          :key="'more-' + index"
+        >
+          <div>
+            <img class="product-thumb" :src="item.image" />
+          </div>
+          <div class="item-color">
+            <span style="background: #f2f2f2"></span>
+            <span style="background: #262626"></span>
+            <span style="background: #ad4144"></span>
+          </div>
+          <div class="item-message">
+            <span class="item-name">{{ item.name }}</span>
+            <p class="item-description">{{ item.description }}</p>
+            <div class="link">
+              <div class="detail">
+                <a :href="item.detailUrl" class="detail-link"
+                  >详情
+                  <el-icon><ArrowRight /></el-icon>
+                </a>
+              </div>
+              <div class="shop">
+                <a :href="item.buyUrl" class="shop-link"
+                  >购买
+                  <el-icon><ArrowRight /></el-icon>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </template>
     </div>
     
 
@@ -120,9 +121,9 @@
 
 <script setup>
 import { ArrowRight, ArrowDown } from "@element-plus/icons-vue";
-import { ProductData } from "~/data/ProductData.ts";
-import { MoreData } from "~/data/MoreData.ts";
-import { ref } from "vue";
+import ProductData from '../src/assets/data/ProductData.json';
+import MoreData from '../src/assets/data/MoreData.json';
+import { ref }  from "vue";
 
 const showMore = ref(false);
 </script>
