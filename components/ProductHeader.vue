@@ -946,7 +946,7 @@ const scrollRight = () => {
   position: absolute;
   top: 50%;
   transform: translateY(-50%) scaleX(1.3);
-  font-size: 28px;
+  font-size: 20px;
   color: #999;
 }
 
@@ -955,7 +955,7 @@ const scrollRight = () => {
   color: #333;
   cursor: pointer;
   transition: color 0.2s ease;
-  margin-top: 30px;
+  margin-top: 18px;
 }
 
 .close-icon:hover {
@@ -970,8 +970,8 @@ const scrollRight = () => {
 }
 
 .section h3 {
-  font-size: 18px;
-  color: #666;
+  font-size: 12px;
+  color: #8a8f99;
   margin-bottom: 20px;
   font-weight: 500;
 }
@@ -983,8 +983,9 @@ const scrollRight = () => {
 }
 
 .tags span {
-  font-size: 16px;
-  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  color: #242933;
   cursor: pointer;
   transition: all 0.2s ease;
 }
