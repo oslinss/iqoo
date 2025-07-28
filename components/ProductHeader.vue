@@ -231,9 +231,15 @@
         <div v-if="activeSeries === 'x'" class="x-series-dropdown">
           <div class="dropdown-content">
             <div class="series-list">
-              <div
+              <div class="series-inner"
+              :style="{
+                transform: `translateX(-${scrollPosition * (itemWidth + gapWidth)}px)`,
+                transition:`transform 0.3s ease`
+              }"
+              >
+                <div
                 class="series-item"
-                v-for="(item, index) in XData?.data || []"
+                v-for="(item, index) in currentData"
                 :key="index"
               >
                 <div class="image-container">
@@ -245,6 +251,7 @@
                     item.label
                   }}</span>
                 </div>
+              </div>
               </div>
             </div>
 
@@ -259,11 +266,11 @@
               <div class="series-detail">
                 <div class="all">
                   <el-icon><MoreFilled /></el-icon>
-                  全部机型
+                  全部X机型
                 </div>
                 <div class="compare">
                   <el-icon><CopyDocument /></el-icon>
-                  比较机型
+                  比较X机型
                 </div>
               </div>
               <button
@@ -281,9 +288,16 @@
         <div v-if="activeSeries === 's'" class="x-series-dropdown">
           <div class="dropdown-content">
             <div class="series-list">
+              <div 
+                class="series-inner"
+                :style="{
+                  transform: `translateX(-${scrollPosition * (itemWidth + gapWidth)}px)`,
+                  transition: 'transform 0.3s ease'
+                }"
+              >
               <div
                 class="series-item"
-                v-for="(item, index) in SData?.data || []"
+                v-for="(item, index) in currentData"
                 :key="index"
               >
                 <div class="image-container">
@@ -295,6 +309,7 @@
                     item.label
                   }}</span>
                 </div>
+              </div>
               </div>
             </div>
 
@@ -309,11 +324,11 @@
               <div class="series-detail">
                 <div class="all">
                   <el-icon><MoreFilled /></el-icon>
-                  全部机型
+                  全部S机型
                 </div>
                 <div class="compare">
                   <el-icon><CopyDocument /></el-icon>
-                  比较机型
+                  比较S机型
                 </div>
               </div>
               <button
@@ -356,7 +371,7 @@ const stickyHeaderRef = ref(null);
 // 搜索相关状态
 const showSearch = ref(false);
 const searchKeyword = ref("");
-const hotTags = ref(["iQOO 12", "X100", "OriginOS 4", "服务中心"]);
+const hotTags = ref(["iQOO 12", "X100", "OriginOS 4", "X Fold5","S30 Pro mini","X200s","查找体验店"]);
 const searchHistory = ref([]);
 
 // 搜索区控制
@@ -455,14 +470,22 @@ onMounted(() => {
   });
 });
 
-// 滚动控制
+
+// 滑动相关配置
+const itemWidth = 180;   
+const gapWidth = 15;      
+const visibleCount = 6;   
 const scrollPosition = ref(0);
-const itemsPerView = ref(6);
-const itemWidth = 140;
+
+const currentData = computed(() => {
+  if (activeSeries.value === 'x') return XData?.data || [];
+  if (activeSeries.value === 's') return SData?.data || [];
+  return [];
+});
+
 
 const maxScrollPosition = computed(() => {
-  const totalItems = XData?.data?.length || 0;
-  return Math.max(0, totalItems - itemsPerView.value);
+  return Math.max(0, Math.ceil(visibleCount));
 });
 
 const scrollLeft = () => {
@@ -589,7 +612,7 @@ const scrollRight = () => {
   padding: 10px;
   border-radius: 8px;
   width: 160px;
-  z-index: 1004;
+  z-index: 1020;
 }
 
 .personal-dropdown div {
@@ -685,7 +708,6 @@ const scrollRight = () => {
   cursor: pointer;
   transform: scaleX(1.3);
   transition: transform 0.3s ease, color 0.3s ease;
-  z-index: 1010;
 }
 
 .mark-search {
@@ -784,24 +806,26 @@ const scrollRight = () => {
 }
 
 .series-list {
-  display: flex;
+   display: flex;
   justify-content: center;
-  gap: 15px;
-  overflow-x: auto;
-  padding: 10px 0;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  position: relative;  
+  overflow: hidden;    
+  width: 600;        
+  margin: 20px auto;     
 }
-.series-list::-webkit-scrollbar {
-  display: none;
+
+.series-inner {
+  display:flex;
+  gap:15px;
+  width: 1260px;
 }
 
 .series-item {
-  min-width: 120px;
-  width: auto;
+  min-width: 180px;
+  width: 180px;
   text-align: center;
   transition: transform 0.2s;
-  padding: 0 10px;
+  padding: 0;
 }
 
 .series-item:hover {
@@ -820,10 +844,26 @@ const scrollRight = () => {
 
 .image-container img {
   max-width: 100%;
-  max-height: 120px;
+  max-height: 140px;
   object-fit: contain;
   margin: 10px;
   min-height: 60px;
+}
+
+.product-name {
+  color: #242933;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.product-label {
+  font-size: 10px;
+  color: #3c4049;
+  border: 1px solid #8a8f99;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 0 6px;
+  margin-left: 8px;
 }
 
 .series-actions {
@@ -845,6 +885,12 @@ const scrollRight = () => {
   margin: 5px 15px;
 }
 
+.scroll-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f0f0f0;
+}
+
 .series-detail {
   display: flex;
   justify-content: center;
@@ -854,7 +900,7 @@ const scrollRight = () => {
   padding: 5px 10px;
   color: #242933;
   font-size: 14px;
-  width: 200px;
+  width: 220px;
 }
 
 .all {
@@ -899,6 +945,13 @@ const scrollRight = () => {
   height: 500px;
 }
 
+.search-overlay .logo {
+  font-size: 38px;
+  font-weight: bolder;
+  color: #333;
+  transform: scaleX(1.5);
+}
+
 .search-overlay.active {
   opacity: 1;
   visibility: visible;
@@ -929,7 +982,7 @@ const scrollRight = () => {
 
 .search-input-container input {
   width: 100%;
-  padding: 20px 20px 20px 60px;
+  padding: 20px;
   font-size: 14px;
   border: none;
   border-bottom: 4px solid #eee;
@@ -945,19 +998,23 @@ const scrollRight = () => {
 .search-icon-overlay {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%) scaleX(1.3);
+  transform: translateY(-50%) scaleX(1.4);
   font-size: 20px;
-  color: #999;
+  color: #242933;
+  font-weight: bolder;
 }
 
 .close-icon {
   font-size: 24px;
+  font-weight: bolder;
   color: #333;
   cursor: pointer;
   transition: color 0.2s ease;
   margin-top: 18px;
 }
 
+.search-overlay-header .logo:hover,
+.search-icon-overlay:hover,
 .close-icon:hover {
   color: #415fff;
 }
@@ -991,7 +1048,6 @@ const scrollRight = () => {
 }
 
 .tags span:hover {
-  background-color: #eee;
   color: #415fff;
 }
 

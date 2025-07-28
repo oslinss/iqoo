@@ -1,43 +1,43 @@
 {
     "data": [
         {
-            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250611/542ed9ce2b3dcb672d0a23f0e7e61c60.png",
-            "name": "XFold 5",
-            "label": "new"
+            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250516/f51f574aa8e1e513eac0afe846204972.png",
+            "name": "S30 Pro mini",
+            "label": "NEW"
         },
         {
-            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250408/fb70df448fe113f235e408e495d959c3.png",
-            "name": "X200 Ultra",
-            "label": "new"
+            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250516/5b63bff28f0c7a91065c103eea43c17f.png",
+            "name":"S30",
+            "label":"NEW"
         },
         {
-            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250408/b2401dfe4c0dd3085ca84d2dde0f8191.png",
-            "name": "X200s",
-            "label": "new"
-        },
-        {
-            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250421/edd6c6c22313cbb30485aaa4067b9d42.png",
-            "name": "X200 Pro mini",
-            "label": "new"
-        },
-        {
-            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20240927/3f0b7b3b0894bb1bfb8e3136349bf8f6.png",
-            "name": "X200 Pro",
+            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20241119/19d1c75b9f3c064644693eac78ffa5bc.png",
+            "name": "S20 Pro",
             "label": ""
         },
         {
-            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20240927/4666302211b92c7d9699f734cbc0234c.png",
-            "name": "X200",
+            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20241119/cd9a4392e297e0f75175bf9004844353.png",
+            "name": "S20",
             "label": ""
         },
         {
-            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20240429/756ccac7239cf44411354dd647a0bb4d.png",
-            "name": "X100 Ultra",
+            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20240522/9011c82f89677511ceb94a55fd3c26ce.png",
+            "name": "S19 Pro",
             "label": ""
         },
         {
-            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20240515/1e16fd177d8429adb5048caa9ec86d2a.png",
-            "name": "X100s",
+            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20240522/1cc8d704c4525e1c338a08731ae7b3fb.png",
+            "name": "S19",
+            "label": ""
+        },
+        {
+            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20231129/6eae9056911a2291c855bfa2988cd6bc.png",
+            "name": "S18 Pro",
+            "label": ""
+        },
+        {
+            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20240223/b3b8aa19db0a5a42f1e881e60fabc384.png",
+            "name": "S18",
             "label": ""
         }
     ]
