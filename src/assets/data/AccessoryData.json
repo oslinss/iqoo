@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "image":"https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250331/729b41de0648b33721219996556729cd.png",
+            "name":"vivo WATCH 5",
+            "label":"NEW"
+        },
+        {
+            "image":"https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250611/af775a7195d4a182742ebca5773d0361.png",
+            "name":"vivo TWS Air3 Pro",
+            "label":"NEW"
+        },
+        {
+            "image":"https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250516/172b309a6b6c557b9113cd13023122c3.png",
+            "name":"vivo TWS Air3",
+            "label":"NEW"
+        },
+        {
+            "image":"https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250331/7b5ad89e002c52d37f6fb009e938bb43.png",
+            "name":"vivo Pad5 Pro",
+            "label":"NEW"
+        },
+        {
+            "image":"https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250516/0f48ef631e95d6d6984c12340239015f.png",
+            "name":"vivo Pad5",
+            "label":"NEW"
+        },
+        {
+            "image":"https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250520/2427b85f597a593ec29ebf5d00d70596.png",
+            "name":"iQOO Pad5 Pro",
+            "label":"NEW"
+        },
+        {
+            "image":"https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250512/136bccb335192fc0614ba7f5ed7464a4.png",
+            "name":"iQOO Pad5",
+            "label":"NEW"
+        },
+        {
+            "image":"https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250512/526bf738a4b256804adfbcff86b41beb.png",
+            "name":"iQOO WATCH 5",
+            "label":"NEW"
+        }
+    ]
+}

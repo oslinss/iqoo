@@ -342,6 +342,176 @@
           </div>
         </div>
       </div>
+      <div class="show mark-show">
+        <div v-if="activeSeries === 'y'" class="x-series-dropdown">
+          <div class="dropdown-content">
+            <div class="series-list">
+              <div 
+                class="series-inner"
+                :style="{
+                  transform: `translateX(-${scrollPosition * (itemWidth + gapWidth)}px)`,
+                  transition: 'transform 0.3s ease'
+                }"
+              >
+              <div
+                class="series-item"
+                v-for="(item, index) in currentData"
+                :key="index"
+              >
+                <div class="image-container">
+                  <img :src="item.image" :alt="item.name" loading="lazy" />
+                </div>
+                <div class="product-info">
+                  <span class="product-name">{{ item.name }}</span>
+                  <span v-if="item.label" class="product-label">{{
+                    item.label
+                  }}</span>
+                </div>
+              </div>
+              </div>
+            </div>
+
+            <div class="series-actions">
+              <button
+                class="scroll-btn left-btn"
+                @click="scrollLeft"
+                :disabled="scrollPosition <= 0"
+              >
+                <el-icon><ArrowLeft /></el-icon>
+              </button>
+              <div class="series-detail">
+                <div class="all">
+                  <el-icon><MoreFilled /></el-icon>
+                  全部Y机型
+                </div>
+                <div class="compare">
+                  <el-icon><CopyDocument /></el-icon>
+                  比较Y机型
+                </div>
+              </div>
+              <button
+                class="scroll-btn right-btn"
+                @click="scrollRight"
+                :disabled="scrollPosition >= maxScrollPosition"
+              >
+                <el-icon><ArrowRight /></el-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="show mark-show">
+        <div v-if="activeSeries === 'iqoo'" class="x-series-dropdown">
+          <div class="dropdown-content">
+            <div class="series-list">
+              <div 
+                class="series-inner"
+                :style="{
+                  transform: `translateX(-${scrollPosition * (itemWidth + gapWidth)}px)`,
+                  transition: 'transform 0.3s ease'
+                }"
+              >
+              <div
+                class="series-item"
+                v-for="(item, index) in currentData"
+                :key="index"
+              >
+                <div class="image-container">
+                  <img :src="item.image" :alt="item.name" loading="lazy" />
+                </div>
+                <div class="product-info">
+                  <span class="product-name">{{ item.name }}</span>
+                  <span v-if="item.label" class="product-label">{{
+                    item.label
+                  }}</span>
+                </div>
+              </div>
+              </div>
+            </div>
+
+            <div class="series-actions">
+              <button
+                class="scroll-btn left-btn"
+                @click="scrollLeft"
+                :disabled="scrollPosition <= 0"
+              >
+                <el-icon><ArrowLeft /></el-icon>
+              </button>
+              <div class="series-detail">
+                <div class="all">
+                  <el-icon><MoreFilled /></el-icon>
+                  全部iQOO机型
+                </div>
+                <div class="compare">
+                  <el-icon><CopyDocument /></el-icon>
+                  比较iQOO机型
+                </div>
+              </div>
+              <button
+                class="scroll-btn right-btn"
+                @click="scrollRight"
+                :disabled="scrollPosition >= maxScrollPosition"
+              >
+                <el-icon><ArrowRight /></el-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="show mark-show">
+        <div v-if="activeSeries === 'accessory'" class="x-series-dropdown">
+          <div class="dropdown-content">
+            <div class="series-list">
+              <div 
+                class="series-inner"
+                :style="{
+                  transform: `translateX(-${scrollPosition * (itemWidth + gapWidth)}px)`,
+                  transition: 'transform 0.3s ease'
+                }"
+              >
+              <div
+                class="series-item"
+                v-for="(item, index) in currentData"
+                :key="index"
+              >
+                <div class="image-container">
+                  <img :src="item.image" :alt="item.name" loading="lazy" />
+                </div>
+                <div class="product-info">
+                  <span class="product-name">{{ item.name }}</span>
+                  <span v-if="item.label" class="product-label">{{
+                    item.label
+                  }}</span>
+                </div>
+              </div>
+              </div>
+            </div>
+
+            <div class="series-actions">
+              <button
+                class="scroll-btn left-btn"
+                @click="scrollLeft"
+                :disabled="scrollPosition <= 0"
+              >
+                <el-icon><ArrowLeft /></el-icon>
+              </button>
+              <div class="series-detail">
+                <div class="compare">
+                  <el-icon><CopyDocument /></el-icon>
+                  全部智能硬件
+                </div>
+              </div>
+              <button
+                class="scroll-btn right-btn"
+                @click="scrollRight"
+                :disabled="scrollPosition >= maxScrollPosition"
+              >
+                <el-icon><ArrowRight /></el-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -361,6 +531,9 @@ import {
 } from "@element-plus/icons-vue";
 import XData from "../src/assets/data/XData.json";
 import SData from "../src/assets/data/SData.json";
+import YData from "../src/assets/data/YData.json";
+import iQOOData from "../src/assets/data/iQOOData.json";
+import AccessoryData from "../src/assets/data/AccessoryData.json"
 
 // 控制.mark显示
 const showMark = ref(false);
@@ -398,7 +571,6 @@ const handleSearch = () => {
       searchHistory.value.unshift(searchKeyword.value);
       if (searchHistory.value.length > 10) searchHistory.value.pop();
     }
-    // 这里可以添加实际的搜索逻辑，比如跳转到搜索结果页
     console.log("搜索内容:", searchKeyword.value);
     closeSearch();
   }
@@ -480,6 +652,9 @@ const scrollPosition = ref(0);
 const currentData = computed(() => {
   if (activeSeries.value === 'x') return XData?.data || [];
   if (activeSeries.value === 's') return SData?.data || [];
+  if (activeSeries.value === 'y') return YData?.data || [];
+  if (activeSeries.value === 'iqoo') return iQOOData?.data || [];
+  if (activeSeries.value === 'accessory') return AccessoryData?.data || [];
   return [];
 });
 
@@ -834,16 +1009,17 @@ const scrollRight = () => {
 
 .image-container {
   overflow: hidden;
-  border: 1px solid #eee;
+  border: 1px solid #f7f8fa;
   border-radius: 8px;
   height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #edeff2;
 }
 
 .image-container img {
-  max-width: 100%;
+  max-width: 140px;
   max-height: 140px;
   object-fit: contain;
   margin: 10px;
@@ -900,7 +1076,7 @@ const scrollRight = () => {
   padding: 5px 10px;
   color: #242933;
   font-size: 14px;
-  width: 220px;
+  width: 300px;
 }
 
 .all {

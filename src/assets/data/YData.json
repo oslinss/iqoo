@@ -1,0 +1,45 @@
+{
+    "data": [
+        {
+            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250717/ede901862c9b18ed59d7c5c492d044e4.png",
+            "name": "Y50 5G",
+            "label": "NEW"
+        },
+        {
+            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250717/720f592a6a62a9b64e9f0b72a00a44fb.png",
+            "name":"Y50m 5G",
+            "label":"NEW"
+        },
+        {
+            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250428/ef948b7e1974f305465c902a68dd1415.png",
+            "name": "Y300 GT",
+            "label": "NEW"
+        },
+        {
+            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250325/43e22df9ae3c17ed4d0abd5a92e1d431.png",
+            "name": "Y300 Pro+",
+            "label": "NEW"
+        },
+        {
+            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250325/213ae3d1c37055ba5a82952d6abf33ee.png",
+            "name": "Y300t",
+            "label": "NEW"
+        },
+        {
+            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20250307/57e02e4d7fed2ce2204f95dbd5859c8e.png",
+            "name": "Y300i",
+            "label": ""
+        },
+        {
+            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20241210/f92303c59a874fc5ccadccf87f2cd488.png",
+            "name": "Y300",
+            "label": ""
+        },
+        {
+            "image": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/navi/20240826/ebe948c500135583c08e5ece767b8668.png",
+            "name": "Y300 Pro",
+            "label": ""
+        }
+    ]
+}
+
