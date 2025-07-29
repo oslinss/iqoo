@@ -152,7 +152,7 @@
         <div class="search-overlay-header">
           <div class="logo">vivo</div>
           <div class="search-input-container">
-              <input
+            <input
               type="text"
               v-model="searchKeyword"
               placeholder="iQOO"
@@ -231,27 +231,30 @@
         <div v-if="activeSeries === 'x'" class="x-series-dropdown">
           <div class="dropdown-content">
             <div class="series-list">
-              <div class="series-inner"
-              :style="{
-                transform: `translateX(-${scrollPosition * (itemWidth + gapWidth)}px)`,
-                transition:`transform 0.3s ease`
-              }"
+              <div
+                class="series-inner"
+                :style="{
+                  transform: `translateX(-${
+                    scrollPosition * (itemWidth + gapWidth)
+                  }px)`,
+                  transition: `transform 0.3s ease`,
+                }"
               >
                 <div
-                class="series-item"
-                v-for="(item, index) in currentData"
-                :key="index"
-              >
-                <div class="image-container">
-                  <img :src="item.image" :alt="item.name" loading="lazy" />
+                  class="series-item"
+                  v-for="(item, index) in currentData"
+                  :key="index"
+                >
+                  <div class="image-container">
+                    <img :src="item.image" :alt="item.name" loading="lazy" />
+                  </div>
+                  <div class="product-info">
+                    <span class="product-name">{{ item.name }}</span>
+                    <span v-if="item.label" class="product-label">{{
+                      item.label
+                    }}</span>
+                  </div>
                 </div>
-                <div class="product-info">
-                  <span class="product-name">{{ item.name }}</span>
-                  <span v-if="item.label" class="product-label">{{
-                    item.label
-                  }}</span>
-                </div>
-              </div>
               </div>
             </div>
 
@@ -265,12 +268,18 @@
               </button>
               <div class="series-detail">
                 <div class="all">
-                  <el-icon><MoreFilled /></el-icon>
-                  全部X机型
+                  <a href="https://www.vivo.com.cn/products-x.html">
+                    <el-icon><MoreFilled /></el-icon>
+                    全部X机型
+                  </a>
                 </div>
                 <div class="compare">
-                  <el-icon><CopyDocument /></el-icon>
-                  比较X机型
+                  <a
+                    href="https://www.vivo.com.cn/vivo/product/contrast?series=4&source=navi"
+                  >
+                    <el-icon><CopyDocument /></el-icon>
+                    比较X机型
+                  </a>
                 </div>
               </div>
               <button
@@ -288,28 +297,30 @@
         <div v-if="activeSeries === 's'" class="x-series-dropdown">
           <div class="dropdown-content">
             <div class="series-list">
-              <div 
+              <div
                 class="series-inner"
                 :style="{
-                  transform: `translateX(-${scrollPosition * (itemWidth + gapWidth)}px)`,
-                  transition: 'transform 0.3s ease'
+                  transform: `translateX(-${
+                    scrollPosition * (itemWidth + gapWidth)
+                  }px)`,
+                  transition: 'transform 0.3s ease',
                 }"
               >
-              <div
-                class="series-item"
-                v-for="(item, index) in currentData"
-                :key="index"
-              >
-                <div class="image-container">
-                  <img :src="item.image" :alt="item.name" loading="lazy" />
+                <div
+                  class="series-item"
+                  v-for="(item, index) in currentData"
+                  :key="index"
+                >
+                  <div class="image-container">
+                    <img :src="item.image" :alt="item.name" loading="lazy" />
+                  </div>
+                  <div class="product-info">
+                    <span class="product-name">{{ item.name }}</span>
+                    <span v-if="item.label" class="product-label">{{
+                      item.label
+                    }}</span>
+                  </div>
                 </div>
-                <div class="product-info">
-                  <span class="product-name">{{ item.name }}</span>
-                  <span v-if="item.label" class="product-label">{{
-                    item.label
-                  }}</span>
-                </div>
-              </div>
               </div>
             </div>
 
@@ -323,12 +334,18 @@
               </button>
               <div class="series-detail">
                 <div class="all">
-                  <el-icon><MoreFilled /></el-icon>
-                  全部S机型
+                  <a href="https://www.vivo.com.cn/products-s.html">
+                    <el-icon><MoreFilled /></el-icon>
+                    全部S机型
+                  </a>
                 </div>
                 <div class="compare">
-                  <el-icon><CopyDocument /></el-icon>
-                  比较S机型
+                  <a
+                    href="https://www.vivo.com.cn/vivo/product/contrast?series=17&source=navi"
+                  >
+                    <el-icon><CopyDocument /></el-icon>
+                    比较S机型
+                  </a>
                 </div>
               </div>
               <button
@@ -346,28 +363,30 @@
         <div v-if="activeSeries === 'y'" class="x-series-dropdown">
           <div class="dropdown-content">
             <div class="series-list">
-              <div 
+              <div
                 class="series-inner"
                 :style="{
-                  transform: `translateX(-${scrollPosition * (itemWidth + gapWidth)}px)`,
-                  transition: 'transform 0.3s ease'
+                  transform: `translateX(-${
+                    scrollPosition * (itemWidth + gapWidth)
+                  }px)`,
+                  transition: 'transform 0.3s ease',
                 }"
               >
-              <div
-                class="series-item"
-                v-for="(item, index) in currentData"
-                :key="index"
-              >
-                <div class="image-container">
-                  <img :src="item.image" :alt="item.name" loading="lazy" />
+                <div
+                  class="series-item"
+                  v-for="(item, index) in currentData"
+                  :key="index"
+                >
+                  <div class="image-container">
+                    <img :src="item.image" :alt="item.name" loading="lazy" />
+                  </div>
+                  <div class="product-info">
+                    <span class="product-name">{{ item.name }}</span>
+                    <span v-if="item.label" class="product-label">{{
+                      item.label
+                    }}</span>
+                  </div>
                 </div>
-                <div class="product-info">
-                  <span class="product-name">{{ item.name }}</span>
-                  <span v-if="item.label" class="product-label">{{
-                    item.label
-                  }}</span>
-                </div>
-              </div>
               </div>
             </div>
 
@@ -381,12 +400,18 @@
               </button>
               <div class="series-detail">
                 <div class="all">
-                  <el-icon><MoreFilled /></el-icon>
-                  全部Y机型
+                  <a href="https://www.vivo.com.cn/products-y.html">
+                    <el-icon><MoreFilled /></el-icon>
+                    全部Y机型
+                  </a>
                 </div>
                 <div class="compare">
-                  <el-icon><CopyDocument /></el-icon>
-                  比较Y机型
+                  <a
+                    href="https://www.vivo.com.cn/vivo/product/contrast?series=5&source=navi"
+                  >
+                    <el-icon><CopyDocument /></el-icon>
+                    比较Y机型
+                  </a>
                 </div>
               </div>
               <button
@@ -404,28 +429,30 @@
         <div v-if="activeSeries === 'iqoo'" class="x-series-dropdown">
           <div class="dropdown-content">
             <div class="series-list">
-              <div 
+              <div
                 class="series-inner"
                 :style="{
-                  transform: `translateX(-${scrollPosition * (itemWidth + gapWidth)}px)`,
-                  transition: 'transform 0.3s ease'
+                  transform: `translateX(-${
+                    scrollPosition * (itemWidth + gapWidth)
+                  }px)`,
+                  transition: 'transform 0.3s ease',
                 }"
               >
-              <div
-                class="series-item"
-                v-for="(item, index) in currentData"
-                :key="index"
-              >
-                <div class="image-container">
-                  <img :src="item.image" :alt="item.name" loading="lazy" />
+                <div
+                  class="series-item"
+                  v-for="(item, index) in currentData"
+                  :key="index"
+                >
+                  <div class="image-container">
+                    <img :src="item.image" :alt="item.name" loading="lazy" />
+                  </div>
+                  <div class="product-info">
+                    <span class="product-name">{{ item.name }}</span>
+                    <span v-if="item.label" class="product-label">{{
+                      item.label
+                    }}</span>
+                  </div>
                 </div>
-                <div class="product-info">
-                  <span class="product-name">{{ item.name }}</span>
-                  <span v-if="item.label" class="product-label">{{
-                    item.label
-                  }}</span>
-                </div>
-              </div>
               </div>
             </div>
 
@@ -439,12 +466,18 @@
               </button>
               <div class="series-detail">
                 <div class="all">
-                  <el-icon><MoreFilled /></el-icon>
-                  全部iQOO机型
+                  <a href="https://www.vivo.com.cn/products-iqoo.html">
+                    <el-icon><MoreFilled /></el-icon>
+                    全部iQOO机型
+                  </a>
                 </div>
                 <div class="compare">
-                  <el-icon><CopyDocument /></el-icon>
-                  比较iQOO机型
+                  <a
+                    href="https://www.vivo.com.cn/vivo/product/contrast?series=16&source=navi"
+                  >
+                    <el-icon><CopyDocument /></el-icon>
+                    比较iQOO机型
+                  </a>
                 </div>
               </div>
               <button
@@ -462,28 +495,30 @@
         <div v-if="activeSeries === 'accessory'" class="x-series-dropdown">
           <div class="dropdown-content">
             <div class="series-list">
-              <div 
+              <div
                 class="series-inner"
                 :style="{
-                  transform: `translateX(-${scrollPosition * (itemWidth + gapWidth)}px)`,
-                  transition: 'transform 0.3s ease'
+                  transform: `translateX(-${
+                    scrollPosition * (itemWidth + gapWidth)
+                  }px)`,
+                  transition: 'transform 0.3s ease',
                 }"
               >
-              <div
-                class="series-item"
-                v-for="(item, index) in currentData"
-                :key="index"
-              >
-                <div class="image-container">
-                  <img :src="item.image" :alt="item.name" loading="lazy" />
+                <div
+                  class="series-item"
+                  v-for="(item, index) in currentData"
+                  :key="index"
+                >
+                  <div class="image-container">
+                    <img :src="item.image" :alt="item.name" loading="lazy" />
+                  </div>
+                  <div class="product-info">
+                    <span class="product-name">{{ item.name }}</span>
+                    <span v-if="item.label" class="product-label">{{
+                      item.label
+                    }}</span>
+                  </div>
                 </div>
-                <div class="product-info">
-                  <span class="product-name">{{ item.name }}</span>
-                  <span v-if="item.label" class="product-label">{{
-                    item.label
-                  }}</span>
-                </div>
-              </div>
               </div>
             </div>
 
@@ -497,8 +532,10 @@
               </button>
               <div class="series-detail">
                 <div class="compare">
-                  <el-icon><CopyDocument /></el-icon>
-                  全部智能硬件
+                  <a href="https://www.vivo.com.cn/products-accessory.html">
+                    <el-icon><CopyDocument /></el-icon>
+                    全部智能硬件
+                  </a>
                 </div>
               </div>
               <button
@@ -533,7 +570,7 @@ import XData from "../src/assets/data/XData.json";
 import SData from "../src/assets/data/SData.json";
 import YData from "../src/assets/data/YData.json";
 import iQOOData from "../src/assets/data/iQOOData.json";
-import AccessoryData from "../src/assets/data/AccessoryData.json"
+import AccessoryData from "../src/assets/data/AccessoryData.json";
 
 // 控制.mark显示
 const showMark = ref(false);
@@ -544,7 +581,15 @@ const stickyHeaderRef = ref(null);
 // 搜索相关状态
 const showSearch = ref(false);
 const searchKeyword = ref("");
-const hotTags = ref(["iQOO 12", "X100", "OriginOS 4", "X Fold5","S30 Pro mini","X200s","查找体验店"]);
+const hotTags = ref([
+  "iQOO 12",
+  "X100",
+  "OriginOS 4",
+  "X Fold5",
+  "S30 Pro mini",
+  "X200s",
+  "查找体验店",
+]);
 const searchHistory = ref([]);
 
 // 搜索区控制
@@ -642,22 +687,20 @@ onMounted(() => {
   });
 });
 
-
 // 滑动相关配置
-const itemWidth = 180;   
-const gapWidth = 15;      
-const visibleCount = 6;   
+const itemWidth = 180;
+const gapWidth = 15;
+const visibleCount = 6;
 const scrollPosition = ref(0);
 
 const currentData = computed(() => {
-  if (activeSeries.value === 'x') return XData?.data || [];
-  if (activeSeries.value === 's') return SData?.data || [];
-  if (activeSeries.value === 'y') return YData?.data || [];
-  if (activeSeries.value === 'iqoo') return iQOOData?.data || [];
-  if (activeSeries.value === 'accessory') return AccessoryData?.data || [];
+  if (activeSeries.value === "x") return XData?.data || [];
+  if (activeSeries.value === "s") return SData?.data || [];
+  if (activeSeries.value === "y") return YData?.data || [];
+  if (activeSeries.value === "iqoo") return iQOOData?.data || [];
+  if (activeSeries.value === "accessory") return AccessoryData?.data || [];
   return [];
 });
-
 
 const maxScrollPosition = computed(() => {
   return Math.max(0, Math.ceil(visibleCount));
@@ -981,17 +1024,17 @@ const scrollRight = () => {
 }
 
 .series-list {
-   display: flex;
+  display: flex;
   justify-content: center;
-  position: relative;  
-  overflow: hidden;    
-  width: 600;        
-  margin: 20px auto;     
+  position: relative;
+  overflow: hidden;
+  width: 600;
+  margin: 20px auto;
 }
 
 .series-inner {
-  display:flex;
-  gap:15px;
+  display: flex;
+  gap: 15px;
   width: 1260px;
 }
 
@@ -1147,7 +1190,6 @@ const scrollRight = () => {
   padding: 20px 60px;
   border-bottom: 1px solid #eee;
 }
-
 
 .search-input-container {
   position: relative;
